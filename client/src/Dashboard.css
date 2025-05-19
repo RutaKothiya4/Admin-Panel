@@ -1,0 +1,127 @@
+/* Dashboard.css */
+
+.dashboard-container {
+  max-width: 1200px;
+}
+
+.formControl{
+  width: 70%;
+}
+
+/* Table container with fixed height & scroll */
+.table-container {
+  max-height: 450px;
+  overflow-y: auto;
+  border-radius: 0.375rem;
+  box-shadow: 0 0 12px rgb(0 0 0 / 0.05);
+}
+
+/* Sticky header styling */
+.table thead th {
+  top: 0;
+  z-index: 10;
+  background: #f8f9fa;
+  font-weight: 600;
+  user-select: none;
+}
+
+/* Columns width */
+.role-col {
+  min-width: 170px;
+  position: sticky;
+  left: 0;
+  background: #fff;
+  z-index: 11;
+  box-shadow: 2px 0 5px rgb(0 0 0 / 0.05);
+}
+
+.permission-col {
+  min-width: 140px;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.delete-role-col {
+  min-width: 120px;
+}
+
+/* Role name column: bold & spacing */
+.role-name-col {
+  font-size: 1.05rem;
+  letter-spacing: 0.03em;
+}
+
+/* Permission name and delete button container */
+.permission-name {
+  font-weight: 600;
+  user-select: none;
+}
+
+/* Delete permission button styling */
+.delete-perm-btn,
+.delete-role-btn {
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1;
+  padding: 0 6px;
+  border-radius: 0.25rem;
+  transition: background-color 0.2s ease;
+}
+
+.delete-perm-btn:hover,
+.delete-role-btn:hover {
+  background-color: #ff949f;
+  color: white;
+  cursor: pointer;
+}
+
+/* Badges with pointer cursor */
+.permission-badge {
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.85rem;
+  padding: 0.3em 0.8em;
+  transition: background-color 0.2s ease;
+}
+
+.permission-badge.bg-success:hover {
+  background-color: #198754cc;
+}
+
+.permission-badge.bg-danger:hover {
+  background-color: #dc3545cc;
+}
+
+/* Save button styling */
+.btn-save {
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  border-radius: 0.4rem;
+  padding: 0.5rem 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-save:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-save:not(:disabled):hover {
+  background-color: #198754;
+  color: white;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .role-col {
+    min-width: 130px;
+  }
+
+  .permission-col {
+    min-width: 110px;
+  }
+}
