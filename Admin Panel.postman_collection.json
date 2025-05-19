@@ -1,0 +1,723 @@
+{
+	"info": {
+		"_postman_id": "3542beee-0b52-40f8-813f-1ed44a1d6313",
+		"name": "Admin Panel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23949941"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mjg2MzQzYmNmOTZlMTcxOWRjMjRlMiIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzQ4NDU2MSwiZXhwIjoxNzQ3NDg1NDYxfQ.pNyjd8tMuHBa_Yrxhafk1V4spwg7eD6d194ArI8DQ_g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"xyz\",\r\n    \"password\": \"xyz@123\",\r\n    \"role\": \"Super Admin\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/auth/register",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"xyz\",\r\n  \"password\": \"xyz@123\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/auth/login",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "refresh",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"refreshToken\": \"f2739a7c3affc68c6cf57060688b5df309c8eba7fa1e5549aa0930f550d419a56bdc2c8a48b57496\",\r\n  \"sessionId\": \"241cfee2-9697-4c34-8a26-75e7ac4f05f1\",\r\n  \"ipAddress\": \"::1\",\r\n  \"userAgent\": \"PostmanRuntime/7.43.4\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/auth/refresh",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "logout",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"refreshToken\": \"05ee556c35a035e0b16e4bc6bc5fa40a43dacd91fa61bb0c582607522d61b048fa963c7cdd0cf5fb\",\r\n    \"sessionId\": \"6064ed6d-fbf7-4d6b-a254-b677f483fa49\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/auth/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmFlNjRlMGEzZDllOTEyMGYzNGJjZSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzY0MzU0NSwiZXhwIjoxNzQ3NjQ0NDQ1fQ.lZ47tGo3smGeMhbr9-FG4-z6aOmSw302EKzn__WkGOg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/api/roles/deleteUser/682ae64e0a3d9e9120f34bce",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"roles",
+						"deleteUser",
+						"682ae64e0a3d9e9120f34bce"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "permissions",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmFlNjRlMGEzZDllOTEyMGYzNGJjZSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzY0MzI4MiwiZXhwIjoxNzQ3NjQ0MTgyfQ.MZAAl5NF1J77_gGIZG6UonDwtyJTIqDbrMYc385k5e8",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/api/permissions/",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"permissions",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create permissions",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjRiYjI0NGE3ZGZmOTVlNDZkZGI3NSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzQ1OTI5MywiZXhwIjoxNzQ3NDYwMTkzfQ.JkqOzavuXemhC6uWd1eRodTSCkLgYBnYR_JYa46sbp",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"create\", //view, create, update, delete\r\n  \"description\": \"Can delete the user\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/permissions",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"permissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete permissions",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmFlNjRlMGEzZDllOTEyMGYzNGJjZSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzY0MzI4MiwiZXhwIjoxNzQ3NjQ0MTgyfQ.MZAAl5NF1J77_gGIZG6UonDwtyJTIqDbrMYc385k5e8",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"creaate\", //view, create, update, delete\r\n  \"description\": \"Can delete the user\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/permissions/682aec1fb390cce48710873a",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"permissions",
+						"682aec1fb390cce48710873a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "roles",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmFlNjRlMGEzZDllOTEyMGYzNGJjZSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzY0MzU0NSwiZXhwIjoxNzQ3NjQ0NDQ1fQ.lZ47tGo3smGeMhbr9-FG4-z6aOmSw302EKzn__WkGOg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/roles",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create roles",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmFlNjRlMGEzZDllOTEyMGYzNGJjZSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzY0MzU0NSwiZXhwIjoxNzQ3NjQ0NDQ1fQ.lZ47tGo3smGeMhbr9-FG4-z6aOmSw302EKzn__WkGOg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ruta\",\r\n    \"permissions\": [\r\n        \"6829e0f269596076212afe5f\",\r\n        \"6829e0f669596076212afe78\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/roles",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"roles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get roles ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmFlNjRlMGEzZDllOTEyMGYzNGJjZSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzY0MzU0NSwiZXhwIjoxNzQ3NjQ0NDQ1fQ.lZ47tGo3smGeMhbr9-FG4-z6aOmSw302EKzn__WkGOg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"ruta\",\r\n    \"permissions\": [\r\n        \"6829e0f269596076212afe5f\",\r\n        \"6829e0f669596076212afe78\"\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "localhost:5000/api/roles/User",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"roles",
+						"User"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete roles",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmFlNjRlMGEzZDllOTEyMGYzNGJjZSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzY0MzU0NSwiZXhwIjoxNzQ3NjQ0NDQ1fQ.lZ47tGo3smGeMhbr9-FG4-z6aOmSw302EKzn__WkGOg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/api/roles/682aed49b390cce48710874e",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"roles",
+						"682aed49b390cce48710874e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "assign-permissions",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjRiYjI0NGE3ZGZmOTVlNDZkZGI3NSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzQ1ODA0NiwiZXhwIjoxNzQ3NDU4OTQ2fQ.Keo4XkoIVgDmHrwmr1J3DgFU7h7Kl-PUov_EfPdT2nM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"roleId\": \"6824be043cf656b116bdb8e0\",\r\n  \"permissions\": [\"6824bb574a7dff95e46ddb83\",\"6824bb4b4a7dff95e46ddb7f\"]\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/roles/assign-permissions",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"roles",
+						"assign-permissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "revoke-session",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mjg4OTYxMGEzMjNlY2NmMTQzMmUzOCIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzYzNTc0MSwiZXhwIjoxNzQ3NjM2NjQxfQ.arIkJPcMZYROIfZJWwAXzaAkvamk6HYZvHJJlS_a-rA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\":\"6828887f32823b866e43715e\",\r\n    \"sessionId\":\"a6edfe79-2269-4727-bd36-5a333c3ae890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/roles/revoke-session",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"roles",
+						"revoke-session"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "admin",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmFlNjRlMGEzZDllOTEyMGYzNGJjZSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzY0MjE1NSwiZXhwIjoxNzQ3NjQzMDU1fQ.LWS9Lrq1n5Sn0WXNSSk0Xld-ypUHBWN73-1lBwHmBLk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/api/users/admin",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"admin"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "manager",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmFlNjRlMGEzZDllOTEyMGYzNGJjZSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzY0MjE1NSwiZXhwIjoxNzQ3NjQzMDU1fQ.LWS9Lrq1n5Sn0WXNSSk0Xld-ypUHBWN73-1lBwHmBLk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/api/users/manager",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"manager"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmFlNjRlMGEzZDllOTEyMGYzNGJjZSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzY0MjE1NSwiZXhwIjoxNzQ3NjQzMDU1fQ.LWS9Lrq1n5Sn0WXNSSk0Xld-ypUHBWN73-1lBwHmBLk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/api/users/user",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"users",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "quotes",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmFlNjRlMGEzZDllOTEyMGYzNGJjZSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzY0MjE1NSwiZXhwIjoxNzQ3NjQzMDU1fQ.LWS9Lrq1n5Sn0WXNSSk0Xld-ypUHBWN73-1lBwHmBLk",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:5000/api/quotes/",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"quotes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create quote",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmFlNjRlMGEzZDllOTEyMGYzNGJjZSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzY0MjE1NSwiZXhwIjoxNzQ3NjQzMDU1fQ.LWS9Lrq1n5Sn0WXNSSk0Xld-ypUHBWN73-1lBwHmBLk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"\\\"The only way to do great work is to love what you do.\\\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/quotes/",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"quotes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update quote",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmFlNjRlMGEzZDllOTEyMGYzNGJjZSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzY0MjE1NSwiZXhwIjoxNzQ3NjQzMDU1fQ.LWS9Lrq1n5Sn0WXNSSk0Xld-ypUHBWN73-1lBwHmBLk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"text\": \"\\\"The only way to do great work is to love what you do.\\\"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/quotes/682aea833fd1c46068a195da",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"quotes",
+						"682aea833fd1c46068a195da"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete quote",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MmFlNjRlMGEzZDllOTEyMGYzNGJjZSIsInJvbGUiOiJTdXBlciBBZG1pbiIsImlhdCI6MTc0NzY0MjE1NSwiZXhwIjoxNzQ3NjQzMDU1fQ.LWS9Lrq1n5Sn0WXNSSk0Xld-ypUHBWN73-1lBwHmBLk",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/quotes/682aea833fd1c46068a195da",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"quotes",
+						"682aea833fd1c46068a195da"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
